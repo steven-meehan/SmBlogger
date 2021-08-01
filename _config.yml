@@ -1,0 +1,248 @@
+#Title
+title: My home to write, think and read | Steven Meehan.com
+
+## NAVBAR ##
+
+# Brand CSS
+BrandImage: images/logo.png
+
+# Links
+Navigation:
+  Archives:
+    HasChildren: false
+    HtmlTagBase: archives
+    LinkText: Archives
+    Link: /archives
+    Title: An archived list of my posts
+    DesktopBootstrapColumnWidth: col-lg-2
+  Writing:
+    HasChildren: true
+    HtmlTagBase: writing
+    LinkText: Writing
+    Title: The collection of all my writing
+    DesktopBootstrapColumnWidth: col-lg-3 col-xl-2
+    Children:
+      Forgers:
+        HasChildren: true
+        HtmlTagBase: forgers
+        FontAwesome:
+        FirstItemInList: true
+        LastItemInList: false
+        DesktopGrandChildAlt: false
+        LinkText: Forgers
+        Title: Series following Forgers
+        Children:
+          DeadMansHand:
+            HasChildren: false
+            HtmlTagBase: dead-mans-hand
+            FirstItemInList: true
+            LastItemInList: false
+            LinkText: Dead Man's Hand
+            Link: /writing/forgers/dead-mans-hand
+            Title: Forgers Book One
+          DrawingThin:
+            HasChildren: false
+            HtmlTagBase: drawing-thin
+            FirstItemInList: false
+            LastItemInList: true
+            LinkText: Drawing Thin
+            Link: /writing/forgers/drawing-thin
+            Title: Forgers Book Two
+      HarrisonAndSylvia:
+        HasChildren: false
+        HtmlTagBase: harrison-sylvia
+        FontAwesome:
+        FirstItemInList: false
+        LastItemInList: false
+        LinkText: Harrison & Sylvia
+        Link: /writing/harrison-sylvia/series-01
+        Title: Crossroads
+      Wattpad:
+        HasChildren: true
+        HtmlTagBase: wattpad
+        FontAwesome:
+        FirstItemInList: false
+        LastItemInList: false
+        DesktopGrandChildAlt: true
+        LinkText: Wattpad
+        Title: Links to my work published on Wattpad
+        Children:
+          Fortunes:
+            HasChildren: false
+            HtmlTagBase: wattpad
+            FirstItemInList: true
+            LastItemInList: false
+            LinkText: Fortunes
+            Link: https://www.wattpad.com/story/195320038-fortunes
+            Title: Fortunes
+          MountingTensions:
+            HasChildren: false
+            HtmlTagBase: mounting-tensions
+            FirstItemInList: false
+            LastItemInList: false
+            LinkText: Mounting Tensions
+            Link: https://www.wattpad.com/story/229837636-mounting-tensions
+            Title: Mounting Tensions
+          Colonization:
+            HasChildren: false
+            HtmlTagBase: colonization
+            FirstItemInList: false
+            LastItemInList: false
+            LinkText: Colonization
+            Link: https://www.wattpad.com/story/194933430-colonization
+            Title: Colonization
+          Discovery:
+            HasChildren: false
+            HtmlTagBase: discovery
+            FirstItemInList: false
+            LastItemInList: false
+            LinkText: Discovery
+            Link: https://www.wattpad.com/story/243790234-discovery
+            Title: Discovery
+          Journeys:
+            HasChildren: false
+            HtmlTagBase: journeys
+            FirstItemInList: false
+            LastItemInList: false
+            LinkText: Journeys
+            Link: https://www.wattpad.com/story/193730653-darren-gilbert-journeys
+            Title: Journeys
+          Arrival:
+            HasChildren: false
+            HtmlTagBase: arrival
+            FirstItemInList: false
+            LastItemInList: false
+            LinkText: Arrival
+            Link: https://www.wattpad.com/story/195792197-arrival
+            Title: Arrival
+          Transformation:
+            HasChildren: false
+            HtmlTagBase: transformation
+            FirstItemInList: false
+            LastItemInList: false
+            LinkText: Transformation
+            Link: https://www.wattpad.com/story/195777713-transformation
+            Title: Transformation
+          AllStories:
+            HasChildren: false
+            HtmlTagBase: all-stories
+            FirstItemInList: false
+            LastItemInList: true
+            LinkText: All Stories
+            Link: https://www.wattpad.com/user/StevenMeehan
+            Title: All my Wattpad stories
+      AllWork:
+        HasChildren: false
+        HtmlTagBase: all-work
+        FontAwesome:
+        FirstItemInList: false
+        LastItemInList: true
+        LinkText: All Work
+        Link: /writing
+        Title: My collected works
+  Author:
+    HasChildren: true
+    HtmlTagBase: author
+    LinkText: Author
+    Title: Links to learn and connect with me
+    DesktopBootstrapColumnWidth: col-lg-3 col-xl-2
+    Children:
+      AboutMe:
+        HasChildren: false
+        HtmlTagBase: author
+        FirstItemInList: true
+        LastItemInList: false
+        FontAwesome: fas fa-user
+        LinkText: About Me
+        Link: /about-me
+        Title: Learn more about me
+      Discord:
+        HasChildren: false
+        HtmlTagBase: discord
+        FirstItemInList: false
+        LastItemInList: true
+        FontAwesome: fab fa-discord
+        LinkText: My Discord
+        Link: https://discord.gg/kP45fWV
+        Title: Connect with me on my Discord server
+  SupportMe:
+    HasChildren: true
+    HtmlTagBase: support-me
+    LinkText: Support Me
+    Title: Support my creative endevors
+    DesktopBootstrapColumnWidth: col-lg-4 col-xl-3 col-xxl-2
+    Children:
+      Amazon:
+        HasChildren: false
+        HtmlTagBase: amazon
+        FirstItemInList: true
+        LastItemInList: false
+        FontAwesome: fab fa-amazon
+        LinkText: With a Book
+        Link: https://amazon.com/author/stevenmeehan
+        Title: Buy a book from Amazon
+      DeviantArt:
+        HasChildren: false
+        HtmlTagBase: deviant-art
+        FirstItemInList: false
+        LastItemInList: false
+        FontAwesome: fab fa-deviantart
+        LinkText: With an Art
+        Link: https://www.deviantart.com/stevenmeehan
+        Title: Purchase a print at DeviantArt
+      Patreon:
+        HasChildren: false
+        HtmlTagBase: patreon
+        FirstItemInList: false
+        LastItemInList: false
+        FontAwesome: fab fa-patreon
+        LinkText: As a Patron
+        Link: https://www.patreon.com/stevenpmeehan
+        Title: Become a patron
+      Kofi:
+        HasChildren: false
+        HtmlTagBase: kofi
+        FirstItemInList: false
+        LastItemInList: true
+        FontAwesome: fas fa-coffee
+        LinkText: With a Ko-Fi
+        Link: https://ko-fi.com/stevenmeehan
+        Title: Enjoy my micro-tales
+
+# Social URLs
+SocialLinks:
+  Facebook:
+    Url: https://www.facebook.com/steven.patrick.meehan
+    Title: Follow on Facebook
+    FontAwsome: fab fa-facebook
+  Twitter:
+    Url: https://twitter.com/SMeehan_Author
+    Title: Follow on Twitter
+    FontAwsome: fab fa-twitter-square
+  Rss:
+    Url: /rss.xml
+    Title: RSS Feed
+    FontAwsome: fas fa-rss-square
+
+## PAGE OPTIONS ##
+
+# Read More text
+excerpt_link: Read More
+
+# Sidebar Widgets
+Widgets:
+  Categories:
+    Enabled: true
+    ViewName: category-cloud
+  Tags:
+    Enabled: true
+    ViewName: tag-cloud
+
+## THEME UTILITIES ##
+
+# Disqus Comments Shortname
+disqus_shortname: stevenmeehan-com
+
+# Google Analytics Tracking ID
+google_analytics: UA-37599294-1
+
