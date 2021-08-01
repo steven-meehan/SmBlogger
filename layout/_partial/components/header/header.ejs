@@ -1,0 +1,33 @@
+<header class="sm-blogger-header">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light row sm-blogger-navigation justify-content-center">
+
+        <!-- Home Link -->
+        <a class="col-7 col-lg-3 col-xl-2 navbar-brand" href="/" title="<%- theme.title %>">
+            <div class="sm-blogger-logo"></div>
+        </a>
+
+        <!-- Mobile Navigation -->
+        <div class="col-2 d-lg-none sm-blogger-mobile-navigation">
+            <%- partial('mobile-navigation') %>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="col-7 d-none d-lg-block sm-blogger-desktop-navigation">
+            <%- partial('desktop-navigation') %>
+        </div>
+
+        <!-- Desktop Social Media Links -->
+        <div class="col-2 d-none d-lg-block sm-blogger-social-links">
+
+            <% for (var socialLink in theme.SocialLinks){ %>
+                <a href="<%- theme.SocialLinks[socialLink].Url %>" title="<%- theme.SocialLinks[socialLink].Title %>">
+                    <span class="<%- theme.SocialLinks[socialLink].FontAwsome %> sm-blogger-social-icons"></span>
+                </a>
+            <% } %>
+
+        </div>
+
+    </nav>
+
+</header>

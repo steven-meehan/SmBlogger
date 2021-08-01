@@ -1,0 +1,112 @@
+<div class="row justify-content-center">
+
+    <% for (var item in theme.Navigation){ %>
+        <% if(!theme.Navigation[item].HasChildren) { %>
+
+            <a href="<%- theme.Navigation[item].Link %>" class="sm-blogger-nav-parent-link <%- theme.Navigation[item].DesktopBootstrapColumnWidth %>" title="<%- theme.Navigation[item].Title %>">
+                <div class="sm-blogger-parent">
+                    <span><%- theme.Navigation[item].LinkText %></span>
+                </div>
+            </a>
+
+        <% } else { %>
+
+            <div class="<%- theme.Navigation[item].DesktopBootstrapColumnWidth %> sm-blogger-parent" title="<%- theme.Navigation[item].Title %>">
+                <input type="checkbox" id="sm-<%- theme.Navigation[item].HtmlTagBase %>-tree" class="d-none"/>                        
+                <label for="sm-<%- theme.Navigation[item].HtmlTagBase %>-tree" class="row sm-blogger-parent-drop-down">
+                    <div class="sm-blogger-nav-parent-link">
+                        <span><%- theme.Navigation[item].LinkText %><div class="sm-blogger-arrow"></div></span>
+                    </div>
+                </label>
+                
+                <div class="sm-blogger-child-tree row">
+                    <div class="col">
+
+                        <% for (var child in theme.Navigation[item].Children){ %>
+
+                            <% if(!theme.Navigation[item].Children[child].HasChildren) { %>
+
+                                <a href="<%- theme.Navigation[item].Children[child].Link %>" class="row sm-blogger-nav-child-link" title="<%- theme.Navigation[item].Children[child].Title %>">
+                                
+                                    <% if(theme.Navigation[item].Children[child].FontAwesome) { %>
+                                        <% if(theme.Navigation[item].Children[child].LastItemInList) { %>
+                                            <div class="sm-blogger-child sm-last-nav-item col">
+                                        <% } else { %>
+                                            <div class="sm-blogger-child sm-blogger-nav-item-seperator col">
+                                        <% } %>
+                                            <div class="row mt-1 mb-1">
+                                                <span class="col-auto me-auto"><%- theme.Navigation[item].Children[child].LinkText %></span>
+                                                <span class="col-auto mt-2 <%- theme.Navigation[item].Children[child].FontAwesome %> sm-blogger-support-me"></span>
+                                            </div>
+                                        </div>
+                                    <% } else { %>
+                                        <% if(theme.Navigation[item].Children[child].LastItemInList) { %>
+                                            <div class="sm-blogger-child pt-1 pb-1 sm-last-nav-item">
+                                        <% } else { %>
+                                            <div class="sm-blogger-child pt-1 pb-1 sm-blogger-nav-item-seperator">
+                                        <% } %>
+                                            <span><%- theme.Navigation[item].Children[child].LinkText %></span>
+                                        </div>
+                                    <% } %>
+
+                                </a>
+
+                            <% } else { %>
+
+                                <div class="row">
+                                    <% if(theme.Navigation[item].Children[child].LastItemInList) { %>
+                                        <div class="col sm-blogger-child sm-last-nav-item" title="<%- theme.Navigation[item].Children[child].Title %>">
+                                    <% } else { %>
+                                        <div class="col sm-blogger-child sm-blogger-nav-item-seperator" title="<%- theme.Navigation[item].Children[child].Title %>">
+                                    <% } %>
+
+                                        <input type="checkbox" id="sm-<%- theme.Navigation[item].Children[child].HtmlTagBase %>-tree" class="d-none"/>
+                                        <label for="sm-<%- theme.Navigation[item].Children[child].HtmlTagBase %>-tree" class="row mt-1 mb-1 sm-blogger-child-drop-down">               
+                                            <% if(theme.Navigation[item].Children[child].FirstItemInList) { %>
+                                                <div class="sm-blogger-nav-child-link sm-first-nav-item">
+                                            <% } else { %>
+                                                <div class="sm-blogger-nav-child-link">
+                                            <% } %>                                                        
+                                                <span><%- theme.Navigation[item].Children[child].LinkText %><div class="sm-blogger-child-arrow"></div></span>
+                                            </div>
+                                        </label>
+
+                                        <% if(theme.Navigation[item].Children[child].DesktopGrandChildAlt) { %>
+                                            <div class="sm-blogger-grand-child-tree-alt row justify-content-center">
+                                        <% } else { %>
+                                            <div class="sm-blogger-grand-child-tree row justify-content-center">
+                                        <% } %>
+                                        
+                                            <% for (var grandChild in theme.Navigation[item].Children[child].Children){ %>
+                                                <a href="<%- theme.Navigation[item].Children[child].Children[grandChild].Link %>" class="mt-1 mb-1 sm-blogger-nav-grand-child-link" title="<%- theme.Navigation[item].Children[child].Children[grandChild].Title %>">
+                                                    <% if(theme.Navigation[item].Children[child].Children[grandChild].LastItemInList) { %>
+                                                        <div class="sm-blogger-grand-child">
+                                                    <% } else { %>
+                                                        <div class="sm-blogger-grand-child sm-blogger-nav-item-seperator">
+                                                    <% } %>
+                                                        <span><%- theme.Navigation[item].Children[child].Children[grandChild].LinkText %></span>
+                                                    </div>
+                                                </a>
+
+                                            <% } %>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            <% } %>
+
+                        <% } %>
+                    </div>
+
+                </div>
+
+            </div>
+
+        <% } %>
+
+    <% } %>
+
+</div>

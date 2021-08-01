@@ -1,0 +1,100 @@
+<input type="checkbox" id="sm-blogger-mobile-nav-tree" class="d-none">
+<label for="sm-blogger-mobile-nav-tree" title="Site Navigation">
+    <span class="navbar-toggler-icon sm-blogger-mobile-nav-toggler"></span>
+</label>
+
+<div id="sm-blogger-mobile-nav">
+
+    <% for (var item in theme.Navigation){ %>
+        <% if(!theme.Navigation[item].HasChildren) { %>
+
+            <a href="<%- theme.Navigation[item].Link %>" class="row sm-blogger-mobile-nav-link" title="<%- theme.Navigation[item].Title %>">
+                <div class="sm-blogger-parent">
+                    <span><%- theme.Navigation[item].LinkText %></span>
+                </div>
+            </a>
+
+        <% } else { %>
+
+            <div class="row mt-2 sm-blogger-mobile-parent" title="<%- theme.Navigation[item].Title %>">
+                <input type="checkbox" id="sm-blogger-mobile-<%- theme.Navigation[item].HtmlTagBase %>-tree" class="d-none"/>                        
+                <label for="sm-blogger-mobile-<%- theme.Navigation[item].HtmlTagBase %>-tree">
+                    <div class="row sm-blogger-mobile-nav-link">
+                        <span><%- theme.Navigation[item].LinkText %></span>
+                    </div>
+                </label>
+                
+                <div class="row sm-blogger-mobile-child-tree">
+                    <div class="col">
+
+                        <% for (var child in theme.Navigation[item].Children){ %>
+
+                            <% if(!theme.Navigation[item].Children[child].HasChildren) { %>
+
+                                <% if(theme.Navigation[item].Children[child].FontAwesome) { %>
+                                    <a href="<%- theme.Navigation[item].Children[child].Link %>" class="row sm-blogger-mobile-nav-link" title="<%- theme.Navigation[item].Children[child].Title %>">
+                                        <span class="offset-2 col-6"><%- theme.Navigation[item].Children[child].LinkText %></span>
+                                        <span class="col-1 mt-2 <%- theme.Navigation[item].Children[child].FontAwesome %> sm-blogger-support-me"></span>
+                                    </a>
+                                <% } else { %>
+                                    <a href="<%- theme.Navigation[item].Children[child].Link %>" class="row sm-blogger-mobile-nav-link" title="<%- theme.Navigation[item].Children[child].Title %>">
+                                        <div class="">
+                                            <span><%- theme.Navigation[item].Children[child].LinkText %></span>
+                                        </div>
+                                    </a>
+                                <% } %>
+        
+                            <% } else { %>
+                                
+                                <div class="row sm-blogger-mobile-child" title="<%- theme.Navigation[item].Children[child].Title %>">
+                                    <input type="checkbox" id="sm-blogger-mobile-<%- theme.Navigation[item].Children[child].HtmlTagBase %>-tree" class="d-none"/>                        
+                                    <label for="sm-blogger-mobile-<%- theme.Navigation[item].Children[child].HtmlTagBase %>-tree">
+                                        <div class="row sm-blogger-mobile-nav-link">
+                                            <span><%- theme.Navigation[item].Children[child].LinkText %></span>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="row sm-blogger-mobile-grand-child-tree">
+                                        <div class="col">
+                                            <% for (var grandChild in theme.Navigation[item].Children[child].Children){ %>
+                                                <% if(theme.Navigation[item].Children[child].Children[grandChild].FontAwesome) { %>
+                                                    <a href="<%- theme.Navigation[item].Children[child].Children[grandChild].Link %>" class="row sm-blogger-mobile-nav-link" title="<%- theme.Navigation[item].Children[child].Children[grandChild].Title %>">
+                                                        <span class="offset-3 col-5"><%- theme.Navigation[item].Children[child].Children[grandChild].LinkText %></span>
+                                                        <span class="col-1 mt-2 <%- theme.Navigation[item].Children[child].Children[grandChild].FontAwesome %> sm-blogger-support-me"></span>
+                                                    </a>
+                                                <% } else { %>
+                                                    <a href="<%- theme.Navigation[item].Children[child].Children[grandChild].Link %>" class="row sm-blogger-mobile-nav-link" title="<%- theme.Navigation[item].Children[child].Children[grandChild].Title %>">
+                                                        <div class="">
+                                                            <span><%- theme.Navigation[item].Children[child].Children[grandChild].LinkText %></span>
+                                                        </div>
+                                                    </a>
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            
+                            <% } %>
+
+                        <% } %>
+
+                    </div>
+                </div>
+            </div>
+
+        <% } %>
+    <% } %>
+
+    <!-- Mobile Social Media Links -->
+    <div class="row justify-content-center mt-5 mb-1">
+        <% for (var socialLink in theme.SocialLinks){ %>
+            <span class="col-2">
+                <a href="<%- theme.SocialLinks[socialLink].Url %>" title="<%- theme.SocialLinks[socialLink].Title %>">
+                    <span class="<%- theme.SocialLinks[socialLink].FontAwsome %> sm-blogger-mobile-social-icons"></span>
+                </a>
+            </span>
+        <% } %>
+    </div>
+
+</div>
