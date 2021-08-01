@@ -66,3 +66,6 @@ public/
 
 #HEXO theme directory
 themes/
+
+#Bootstrap compiled files
+source/bootstrap
