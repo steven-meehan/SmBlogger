@@ -1,0 +1,10 @@
+<div class="">
+    <h4 class=""><span class="fas fa-folder-open"> </span> Categories</h4>
+    <p>
+        <% site.categories.sort('name').each(function(item){ %>
+            <a class="sm-blogger-category-links" title="<%- item.name%>" href="<%- config.root %><%- item.path %>" style="font-size: <%- Math.min(item.posts.length * 2 + 8, 20) %>px">
+                <%- item.name %>
+            </a>
+        <% }); %>
+    </p>
+</div>

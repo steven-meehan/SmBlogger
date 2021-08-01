@@ -1,0 +1,9 @@
+<% for(var widget in theme.Widgets){ %>
+    <% if(theme.Widgets[widget].Enabled) { %>
+
+        <div class="sm-blogger-sidebar-widget-<%- theme.Widgets[widget].ViewName %>">
+            <%- partial(theme.Widgets[widget].ViewName) %>
+        </div>
+        
+    <% } %>
+<% }; %>
