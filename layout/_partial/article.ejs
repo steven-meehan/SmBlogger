@@ -1,0 +1,96 @@
+<div class="container mt-3">
+
+    <div class="row">
+
+        <% if(sidebarLeft) { %>
+            <!-- Sidebar -->
+            <div class="col-md-3 order-2 order-md-1 mt-4">
+                <%- partial('components/sidebar/sidebar') %>
+            </div>
+        <% } %>
+
+        <!-- Main Content -->
+        <% if(sidebarLeft) { %>
+            <div class="col-9 sm-blogger-post order-md-2">
+        <% } else { %>
+            <div class="col-9 sm-blogger-post">
+        <% } %>
+
+            <!-- Title -->
+            <h1 class="row sm-blogger-post-title mb-3">
+                <div class="col">
+                    <%- item.title || item.link%>
+                </div>
+            </h1>
+        
+            <!-- Date and Author -->
+            <div class="row justify-content-end sm-blogger-post-date mb-3">
+                <div class="col">
+                    <% if(displayDate) { %>
+                        <%= item.date.format(config.date_format) %>
+                    <% } %>    
+                    <% if(item.author) { %>
+                        by <%- item.author %>
+                    <% } %>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="row justify-content-start">
+                <div class="col sm-blogger-post-content">
+                    <%- item.content %>
+                </div>
+            </div>
+
+            <!-- Post-Content Components -->
+            <div class="row">
+
+                <div class="col">
+                    <!-- Post Categories links -->
+                    <span><%- partial('components/post/post-categories', {item: item}) %></span>
+                    <!-- Post Tags links -->
+                    <span><%- partial('components/post/post-tags', {item: item}) %></span>
+                </div>
+                        
+            </div>
+
+        </div>
+
+        <% if(!sidebarLeft) { %>
+            <!-- Right Sidebar -->
+            <div class="col-md-3 mt-4">
+                <%- partial('components/sidebar/sidebar') %>
+            </div>
+        <% } %>
+        
+    </div>
+
+    <% if(item.pageWidget) { %>
+        <div class="row">
+
+            <!-- Page Widget -->
+            <%- partial('components/utilities/page-widget') %>
+        
+        </div>    
+    <% } %>
+
+    <% if(item.showKofiSuport) { %>
+        <div class="row">
+
+            <!-- Ko-Fi Support Button -->
+            <%- partial('components/support/kofi') %>
+        
+        </div>    
+    <% } %>
+
+    <div class="row justify-content-center">
+
+        <% if(displayAds || item.displayAd) { %>
+            <br />
+            <br />    
+            <%- partial('_partial/widgets/ads/post-ads') %>
+            <br /> 
+        <% } %>
+
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container mt-3">
+
+    <div class="row">
+
+        <% if(sidebarLeft) { %>
+            <!-- Sidebar -->
+            <div class="col-md-3 order-2 order-md-1 mt-4">
+                <%- partial('components/sidebar/sidebar') %>
+            </div>
+        <% } %>
+
+        <!-- Main Content -->
+        <% if(sidebarLeft) { %>
+            <div class="col-md-9 order-md-2">
+        <% } else { %>
+            <div class="col-md-9">
+        <% } %>
+
+            <!-- Title -->
+            <%
+                var title = '';
+                if (postExcerpt) {
+                    if (page.category) title = page.category;
+                    if (page.tag) title = page.tag;
+                    if (page.archive){
+                        if (page.year) title = page.year + (page.month ? '-' + page.month : '');
+                        else title = "Archives";
+                    }
+                }
+            %>
+            <% if(title) { %>
+                <h1 class="sm-blogger-list-title row justify-content-center"><%- title %></h1>
+            <% } %>
+
+            <!-- Posts -->
+            <div class="row">
+                <div class="col">
+                    <% page.posts.each(function(item){ %>
+                        <% if(postExcerpt) { %>
+                            <%- partial('components/post/archive', {
+                                item: item
+                            }) %>
+                        <% } else { %>
+                            <%- partial('components/post/excerpt', {
+                                item: item
+                            }) %>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+
+        </div>
+
+        <% if(!sidebarLeft) { %>
+            <!-- Right Sidebar -->
+            <div class="col-md-3 mt-4">
+                <%- partial('components/sidebar/sidebar') %>
+            </div>
+        <% } %>
+        
+    </div>
+
+    <div class="row justify-content-center">
+
+        <!-- Paginator -->
+        <%- partial('components/utilities/pagination') %>
+
+        <!-- Ko-Fi Support Button -->
+        <%- partial('components/support/kofi') %>
+
+    </div>
+
+    <div class="row justify-content-center">
+
+        <% if(displayAds || item.displayAd) { %>
+            <br />
+            <br />    
+            <%- partial('components/post/post-ads') %>
+            <br /> 
+        <% } %>
+
+    </div>
+
+</div>
