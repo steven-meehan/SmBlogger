@@ -1,0 +1,22 @@
+<div class="sm-blogger-post">
+
+    <!-- Title -->
+    <h2 class="sm-blogger-list-title">
+        <a href="<%- config.root %><%- item.path %>" title="<%- item.title || item.link %>">
+            <%- item.title || item.link%>
+        </a>
+    </h2>
+
+    <!-- Date and Author -->
+    <p class="sm-blogger-post-date">
+        <%= item.date.format(config.date_format) %>
+        <% if(item.author) { %>
+            by <%- item.author %>
+        <% } %>
+    </p>
+
+    <!-- Post Categories links -->
+    <span><%- partial('post-categories', {item: item}) %></span>
+    <!-- Post Tags links -->
+    <span><%- partial('post-tags', {item: item}) %></span>
+</div>

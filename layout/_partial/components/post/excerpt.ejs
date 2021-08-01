@@ -1,0 +1,37 @@
+<div class="sm-blogger-post row">
+
+    <div class="col">
+        <!-- Title -->
+        <h2 class="sm-blogger-list-title row">
+            <a href="<%- config.root %><%- item.path %>" title="<%- item.title %>" class="col">
+                <%- item.title %>
+            </a>
+        </h2>
+    
+        <!-- Date -->
+        <p class="sm-blogger-post-date row">
+            <%= item.date.format(config.date_format) %>
+        </p>
+    
+        <!-- Content -->
+        <div class="row">
+            <%- item.excerpt || item.content %>..
+        </div>
+    
+        <!-- Only display the Read More link if we are displaying an excerpt -->
+        <% if(item.excerpt) { %>
+            <p class="row justify-content-end">
+                <a href="<%- config.root %><%- item.path %>" class="" title="<%= theme.excerpt_link %>">
+                    <%= theme.excerpt_link %>
+                </a>
+            </p>
+        <% } %>
+    
+        <!-- Post Categories links -->
+        <span><%- partial('post-categories', {item: item}) %></span>
+        <!-- Post Tags links -->
+        <span><%- partial('post-tags', {item: item}) %></span>
+
+    </div>
+
+</div>

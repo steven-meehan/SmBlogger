@@ -1,0 +1,12 @@
+<% if (item.categories && item.categories.length){ %>
+    <%
+        var categories = [];
+        item.categories.forEach(function(category){
+            categories.push('<a href="' + config.root + category.path + '" title="' + category.name + '">' + category.name + '</a>');
+        });
+    %>
+    <div class="sm-blogger-post-categories">
+        <span class="fas fa-folder-open"></span>
+        <%- categories.join(' / ') %>
+    </div>
+<% } %>
