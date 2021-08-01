@@ -69,3 +69,8 @@ themes/
 
 #Bootstrap compiled files
 source/bootstrap
+
+#site images
+favicon.png
+background.png
+logo.png
