@@ -1,0 +1,527 @@
+/**********************/
+/*** SM Blogger TOC ***/
+/*** Global ***********/
+/*** Body *************/
+/*** Header ***********/
+/***** Navbar *********/
+/******* Logo *********/
+/******* Mobile Nav ***/
+/******* Desktop Nav **/
+/******* Common Bits **/
+/*** Post Content *****/
+/***** Purchase Links */
+/***** Paginator ******/
+/*** Sidebar **********/
+/*** Footer ***********/
+/**********************/
+
+/* ************************ SM Blogger Global ************************** */
+
+a {
+    color: #272b2e;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+}
+
+/* ********************************************************************* */
+
+/* ************************* SM Blogger Body *************************** */
+
+.sm-blogger-body{
+    color: #555;
+    background-image: url(/images/background.png);
+    background-size: cover;
+    background-position: center;
+    font-family: "Times New Roman", Times, Georgia, serif;
+}
+
+/* ********************************************************************* */
+
+/* ************************ SM Blogger Header ************************** */
+
+.sm-blogger-header{
+    background-color: #f8f8ff;
+}
+
+/* ********************************************************************* */
+
+/* ************************ SM Blogger Navbar ************************** */
+
+.sm-blogger-navigation{
+    box-shadow: 0em 0em .5em #3636413b;
+    font-family: 'Courgette', cursive;
+}
+
+/* ********************************************************************* */
+
+/* ************************ SM Blogger Logo ************************** */
+
+.sm-blogger-logo {
+    background-image: url(/images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 10.625em;
+    width: 10.625em;
+    height: 5.25em;
+}
+
+/* ********************************************************************* */
+
+/* ********************** SM Blogger Mobile Nav ************************ */
+
+/* Hamburger Icon Sizing*/
+.sm-blogger-mobile-navigation .sm-blogger-mobile-nav-toggler{
+    height: 4.5em;
+    width: 4.5em;
+}
+
+#sm-blogger-mobile-nav {
+    display: none;
+    position: absolute;
+    margin-top: 1.5em;
+    background-color: #0c0f11;
+    width: 100%;
+    left: 0;
+    top: 3em;
+    overflow-x: hidden;
+    text-align: center;
+    font-size: 1.75em;
+    border-top: rgb(229,229,243, 25%) .1em groove;
+    border-bottom: rgb(229,229,243, 25%) .1em groove;
+}
+
+.sm-blogger-mobile-nav-link {
+    color: #f8f9fa;
+    text-decoration: none;
+    padding: .1em;
+}
+
+.sm-blogger-mobile-nav-link:hover {
+    background-color: #e5e5f3;
+    color: #272b2e;
+    border: #FFD700 .1em groove;
+    box-shadow: 0em 0em .3em #887820;
+    font-weight: 600;
+    border-radius: 1em 1em 1em 1em;
+    cursor: pointer;
+}
+
+.sm-blogger-mobile-parent {
+    z-index: 777;
+}
+
+.sm-blogger-mobile-child{
+
+}
+
+.sm-blogger-mobile-parent .sm-blogger-mobile-child-tree,
+.sm-blogger-mobile-child .sm-blogger-mobile-grand-child-tree {
+    display: none;
+    opacity: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 100ms ease-in-out;
+    background-color: #272b2e;
+    text-align: center;
+    margin: 0;
+}
+
+.sm-blogger-mobile-child .sm-blogger-mobile-grand-child-tree {
+    background-color: #3d4042;
+}
+
+.sm-blogger-mobile-social-icons{
+    font-size: 1.5em;
+    color: #f8f9fa;
+}
+
+/* Mobile Navbar Animations */
+.sm-blogger-mobile-parent input:checked ~ .sm-blogger-mobile-child-tree,
+.sm-blogger-mobile-child > input:checked ~ .sm-blogger-mobile-grand-child-tree {
+    display: block;
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.sm-blogger-mobile-parent input:checked ~ .sm-blogger-mobile-child-tree,
+.sm-blogger-mobile-child input:checked ~ .sm-blogger-mobile-grand-child-tree {
+    box-shadow: 0em 0em .25em #e5eefb;
+}
+
+#sm-blogger-mobile-nav-tree:checked ~ #sm-blogger-mobile-nav {
+    display: block;
+}
+
+/* ********************************************************************* */
+
+/* ********************** SM Blogger Desktop Nav *********************** */
+
+/*   Navbar Items Stylings   */
+
+.sm-blogger-nav-parent-link {
+    font-size: 1.5em;
+    list-style: none;
+    text-decoration: none;
+    color: #3b3d3f;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    padding: 0 .25em;
+}
+
+.sm-blogger-nav-parent-link:hover {
+    color: #29240c;
+}
+
+.sm-blogger-child {
+    background-color: #3b3d3f;
+    color: #f8f9fa;
+}
+
+.sm-blogger-grand-child {
+    background-color: #5a5c5e;
+    color: #f8f9fa;
+    border-radius: 1em 1em 1em 1em;
+    box-shadow: 0em 0em .5em #3b3d3f;
+}
+
+.sm-blogger-nav-item-seperator {
+    border-bottom: white 1px ridge
+}
+
+.sm-blogger-child:hover,
+.sm-blogger-grand-child:hover {
+    background-color: #e5e5f3;
+    color: #272b2e;
+    width: 100%;
+    border: #FFD700 .1em groove;
+    box-shadow: 0em 0em .5em #887820;
+    font-weight: 700;
+}
+
+.sm-blogger-grand-child:hover {
+    background-color: #f8f9fad2;
+    color: black;
+}
+
+.sm-blogger-nav-child-link,
+.sm-blogger-nav-grand-child-link {
+    font-size: 1.25em;
+    list-style: none;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* ************************* */
+
+/*   Navbar Tree Stylings    */
+
+.sm-blogger-child-tree {
+    position: absolute;
+    z-index: 888;
+    width: 14em;
+    background-color: #3b3d3f;
+    box-shadow: 0em 0em .4em #ffd900a2;
+    border: #f8f9fa .15em ridge;
+}
+
+.sm-blogger-grand-child-tree,
+.sm-blogger-grand-child-tree-alt {
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(228, 232, 255);
+    text-align: center;
+    width: 15em;
+    padding: .1em;
+    box-shadow: 0em 0em .5em #5a5c5e;
+}
+
+.sm-blogger-grand-child-tree {
+    right: -9.75em;
+    top: 1em;
+}
+
+.sm-blogger-grand-child-tree-alt {
+    left: -13.75em;
+    top: 6em;
+}
+
+/* ************************* */
+
+/* Desktop Navbar Animations */
+
+.sm-blogger-child-tree,
+.sm-blogger-grand-child-tree,
+.sm-blogger-grand-child-tree-alt {
+    opacity: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 100ms ease-in-out;
+}
+
+.sm-blogger-parent input:checked ~ .sm-blogger-child-tree,
+.sm-blogger-child > input:checked ~ .sm-blogger-grand-child-tree,
+.sm-blogger-child > input:checked ~ .sm-blogger-grand-child-tree-alt {
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.sm-blogger-parent > input:checked ~ .sm-blogger-parent-drop-down {
+    background-color: #3b3d3f;
+    border-radius: 1em 1em 0 0;
+    border-top: #FFD700 .1em ridge;
+    border-right: #FFD700 .1em ridge;
+    border-left: #FFD700 .1em ridge;
+}
+
+.sm-blogger-parent > input:checked ~ .sm-blogger-parent-drop-down > div {
+    color: #f8f9fa;
+    border-bottom: #f8f9fa 1px solid;
+}
+
+.sm-blogger-parent > input:checked ~ .sm-blogger-child-tree {
+    border-radius: 0 0 1em 1em;
+}
+
+.sm-blogger-child > input:checked ~ .sm-blogger-grand-child-tree {
+    border-radius: 0 1em 1em 1em;
+}
+
+.sm-blogger-child > input:checked ~ .sm-blogger-grand-child-tree-alt {
+    border-radius: 1em 0 1em 1em;
+}
+
+.sm-blogger-parent > input:checked ~ .sm-blogger-child-tree .sm-last-nav-item,
+.sm-blogger-child > input:checked ~ .sm-blogger-grand-child-tree .sm-last-nav-item,
+.sm-blogger-child > input:checked ~ .sm-blogger-grand-child-tree-alt .sm-last-nav-item {
+    border-radius: 0 0 1em 1em;
+}
+
+/* ************************* */
+
+/* Social Link Icons */
+
+.sm-blogger-social-icons{
+    font-size: 2.5em;
+    color: #272b2e;
+}
+
+.sm-blogger-social-links {
+    text-align: center;
+    margin-left: -1em;
+}
+
+.sm-blogger-social-links > a {
+    text-decoration: none;
+}
+
+/* ********************************************************************* */
+
+/* ******************** SM Blogger Common Elements ********************* */
+
+.sm-blogger-arrow,
+.sm-blogger-child-arrow,
+.sm-blogger-child-arrow-alt {
+    width: 0.5em;
+    height: 0.5em;
+    display: inline-block;
+    vertical-align: middle;
+    border-left: 0.15em solid currentColor;
+    border-bottom: 0.15em solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -0.1em;
+    margin-left: .5em;
+    transition: transform 100ms ease-in-out;
+}
+
+.sm-blogger-child-arrow,
+.sm-blogger-child-arrow-alt {
+    transform: rotate(-45deg);
+}
+
+/* Arrow Animations */
+
+.sm-blogger-parent input:checked ~ label .sm-blogger-arrow,
+.sm-blogger-mobile-child > input:checked ~ label .sm-blogger-arrow {
+    transform: rotate(-45deg);
+}
+
+.sm-blogger-child > input:checked ~ label .sm-blogger-child-arrow {
+    transform: rotate(-135deg);
+}
+
+.sm-blogger-child > input:checked ~ label .sm-blogger-child-arrow-alt {
+    transform: rotate(45deg);
+}
+
+/* ********************************************************************* */
+
+/* ************************* SM Blogger Post *************************** */
+
+.sm-blogger-post {
+    height: auto;
+    background-color: #f8f8ff;
+    margin: 0px auto 1.5em auto;
+    padding: .75em;
+    box-shadow: rgba(0, 0, 0, .7) 2px 2px 8px;
+    border-radius: 4px;
+}
+
+.sm-blogger-post-title,
+.sm-blogger-list-title {
+    font-family: 'Courgette', cursive;
+    font-size: 2em;
+}
+
+.sm-blogger-post-title {
+    text-align: center;
+}
+
+.sm-blogger-post-title > a,
+.sm-blogger-post-categories > a,
+.sm-blogger-post-tags > a {
+    color: #272b2e;
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+.sm-blogger-post > h1 {
+    font-size: 2.5em;
+}
+
+.sm-blogger-post-date {
+    color: #999;
+}
+
+.sm-blogger-post-date > div {
+    text-align: end;
+}
+
+.story-ellipses{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 0.5em;
+}
+
+.center,
+.center-alt {
+    text-align: center;
+}
+
+.center img,
+.center-alt img {
+    margin: .25em;
+    box-shadow: rgba(0, 0, 0, .7) 1px 1px 4px;
+    height: 300px;
+}
+
+.center-alt img {
+    height: 200px;
+}
+
+.embedded-image-left{
+    float:left;
+    margin:1em;
+}
+.embedded-image-right{
+    float:right;
+    margin:1em;
+}
+
+.sm-blogger-post-content p {
+    font-size: 1.15em;
+}
+
+/* ********************************************************************* */
+
+/* ******************* SM Blogger Purchase Links *********************** */
+
+.purchase-links{
+    display: inline-block;
+    padding: .2em 1em;
+    background-color: #edad31;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .7) 2px 2px 8px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    max-width: 15em;
+    min-width: 10em;
+}
+
+.purchase-links:hover{
+    color: black;
+    background-color: #cac8c5;
+    text-decoration: none;
+}
+
+/* ********************************************************************* */
+
+/* *********************** SM Blogger Paginator ************************ */
+
+#paginator {
+    text-align: center;
+    margin-bottom: 1.25em;
+}
+
+#paginator > .page-number, 
+#paginator > .current, 
+#paginator > .next, 
+#paginator > .prev{
+    width: 100%;
+    padding: 5px 10px;
+    margin: .1em;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #fff;
+    text-decoration: none;
+}
+
+#paginator > .current {
+    background-color: #272b2e;
+    color: #f8f8ff;
+}
+
+/* ********************************************************************* */
+
+/* *********************** SM Blogger Sidebar ************************** */
+
+.sm-blogger-sidebar-widget-category-cloud,
+.sm-blogger-sidebar-widget-tag-cloud {
+    width: 100%;
+    height: auto;
+    background-color: #f8f8ff;
+    margin: 0px auto 1.5em auto;
+    padding: .75em;
+    box-shadow: rgba(0, 0, 0, .7) 2px 2px 8px;
+    border-radius: 4px;
+}
+
+.sm-blogger-category-links,
+.sm-blogger-tag-links {
+    color: #272b2e;
+    text-decoration: none
+}
+
+.sm-blogger-category-links:hover,
+.sm-blogger-tag-links:hover,
+.sm-blogger-post-categories > a:hover,
+.sm-blogger-post-tags > a:hover {
+    background-color: #272b2e;
+    color: ghostwhite;
+    text-decoration: none;
+}
+
+/* ********************************************************************* */
+
+/* ************************ SM Blogger Footer ************************** */
+
+.sm-blogger-footer-amazon-ad {
+    margin-left: 18.25em;
+}
+
+/* ********************************************************************* */
